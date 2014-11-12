@@ -94,6 +94,7 @@ class Game
 			@board.print_board
 			player_turn
 			@last_move = current_player
+			clear_screen
 
 			break if @board.game_won?
 		end
@@ -125,6 +126,10 @@ class Game
 		x = gets.chomp.to_i
 
 		@board.place_sigil(current_player, x - 1, y - 1)
+	end
+
+	def clear_screen
+		system('clear')
 	end
 end
 
